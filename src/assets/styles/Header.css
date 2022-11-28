@@ -1,0 +1,61 @@
+.title-container,
+header,
+button,
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    background-color: var(--dark-grey);
+    color: var(--light-grey);
+    font-family: var(--font-regular);
+    padding-right: 15px;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.menu-icon,
+.close-icon {
+    background-color: var(--medium-dark-grey);
+    padding: 20px;
+}
+
+.logo,
+.title-container,
+.bin-icon {
+    padding: 0 25px;
+}
+
+.logo {
+    border-right: 1px solid white;
+}
+
+.actions {
+    margin-left: auto;
+}
+
+svg > path + path {
+    fill: var(--grey);
+}
+
+
+@media screen and (max-width: 900px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    button p {
+        display: none;
+    }
+    .save-icon {
+        padding-right: 0;
+    }
+}

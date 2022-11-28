@@ -1,0 +1,38 @@
+:root {
+    --font-regular: "Roboto", sans-serif;
+    --font-slab: "Roboto Slab", serif;
+    --font-mono: "Roboto Mono", monospace;
+
+    --black: #151619;
+    --light-black: #1d1f22;
+    --dark-grey: #2b2d31;
+    --medium-dark-grey: #35393f;
+    --medium-grey: #5a6069;
+    --medium-light-grey: #7c8187;
+    --grey: #c1c4cb;
+    --light-grey: #e4e4e4;
+    --very-light-grey: #f5f5f5;
+    --white: #ffffff;
+
+    --red-orange: #e46643;
+    --orange: #f39765;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    height: 100vh;
+    font-family: var(--font-mono);
+    color: var(--grey);
+    overflow: hidden;
+    display: flex;
+}
+
+body {
+    background-color: var(--black);
+}

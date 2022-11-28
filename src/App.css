@@ -1,0 +1,42 @@
+button {
+    background-color: var(--red-orange);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--light-grey);
+}
+
+button:hover {
+    background-color: var(--orange);
+}
+
+.bin-icon,
+.menu-icon,
+.close-icon,
+button,
+.file {
+    cursor: pointer;
+}
+
+svg {
+    vertical-align: middle;
+}
+
+.save-icon svg > path + path,
+.add-icon svg > path + path {
+    fill: var(--light-grey);
+}
+
+.save-icon,
+.file-icon,
+.add-icon {
+    padding-right: 8px;
+}
+
+.menu-container + div {
+    width: 100%;
+}
+
+#body {
+    width: 100vw;
+}

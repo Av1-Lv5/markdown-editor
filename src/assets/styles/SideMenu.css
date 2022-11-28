@@ -1,0 +1,61 @@
+/* styles related to  */
+#side-menu {
+    background-color: var(--light-black);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(0);
+    width: 350px;
+    transition: transform 350ms ease, width 350ms ease;
+}
+
+#side-menu.hide {
+    width: 0;
+    transform: translateX(-350px);
+    visibility: hidden;
+}
+
+.menu__head {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#side-menu .files-list {
+    overflow-y: scroll;
+    padding: 0 25px;
+}
+#side-menu > button {
+    margin: 25px;
+    justify-content: center;
+}
+
+.file {
+    padding: 8px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.files-list .file {
+    margin-bottom: 10px;
+}
+
+.file__date {
+    color: var(--medium-light-grey);
+}
+.file__date {
+    padding-bottom: 0.25em;
+    font-size: 0.8em;
+}
+.file:hover {
+    color: var(--red-orange);
+}
+
+.current-note {
+    color: var(--red-orange);
+    background-color: var(--dark-grey);
+    border-radius: 10px;
+}

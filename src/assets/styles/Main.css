@@ -1,0 +1,49 @@
+.pane-title {
+    letter-spacing: 0.1em;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.md-input,
+.md-preview {
+    padding: 15px 25px;
+    overflow-y: scroll;
+}
+
+.md-preview,
+.pane-headers-container .pane-head:nth-of-type(2) {
+    border-left: 1px solid var(--light-grey);
+}
+.md-input,
+.md-preview {
+    width: 50vw;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.pane-headers-container {
+    display: flex;
+}
+
+.pane-head {
+    background-color: var(--light-black);
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.md-input {
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    outline: none;
+    font-size: 1rem;
+}
