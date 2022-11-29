@@ -4,17 +4,17 @@ import { ReactComponent as HamIcon } from "../assets/images/menu-fill.svg";
 import { ReactComponent as CloseBtn } from "../assets/images/close-line.svg";
 
 function sideMenuToggler() {
-    const [isShown, setIsShown] = React.useState(false);
+    const [isMenuShown, setIsMenuShown] = React.useState(false);
 
     function toggleSideMenu() {
         const sideMenu = document.querySelector("#side-menu");
         sideMenu.classList.toggle("hide");
-        setIsShown((prev) => !prev);
+        setIsMenuShown((prev) => !prev);
     }
 
     return (
         <span className="menu-icon" onClick={toggleSideMenu}>
-            {isShown ? <CloseBtn /> : <HamIcon />}
+            {isMenuShown ? <CloseBtn /> : <HamIcon />}
         </span>
     );
 }

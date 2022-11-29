@@ -9,6 +9,18 @@ import "../assets/styles/Preview.css";
 function Main(props) {
     const [content, setContent] = React.useState("");
 
+    // code belongs to markdown-it package.
+    let md = window.markdownit();
+    let mdParsed = md.render(`${content}`);
+
+    function updatePreview(event) {
+        setContent(event.target.value);
+    }
+
+    React.useEffect(() => {
+        setTextareaHeight();
+    }, []);
+
     function setTextareaHeight() {
         const headerHeight = document.querySelector("header").offsetHeight;
         const paneHeadHeight =
@@ -23,22 +35,6 @@ function Main(props) {
         mdPreview.style.height = height;
     }
 
-    // code belongs to markdown-it package.
-    let md = window.markdownit();
-    let mdParsed = md.render(`${content}`);
-
-    function updatePreview(event) {
-        setContent(event.target.value);
-    }
-
-    React.useEffect(() => {
-        setTextareaHeight();
-    }, []);
-
-    React.useEffect(() => {
-        setContent(props.currentNote.content);
-    }, [props.currentNote]);
-
     return (
         <main>
             <textarea
@@ -48,7 +44,6 @@ function Main(props) {
                 onChange={updatePreview}
                 value={content}
             ></textarea>
-
             <div
                 className="md-preview"
                 dangerouslySetInnerHTML={{ __html: mdParsed }}

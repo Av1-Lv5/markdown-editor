@@ -21,12 +21,8 @@ function Header(props) {
                     <FileIcon />
                 </span>
                 <span>
-                    <div className="file__date">
-                        {props.currentNote.dateCreated}
-                    </div>
-                    <div className="file__title">
-                        {props.currentNote.title}.md
-                    </div>
+                    <div className="file__date">dateCreated</div>
+                    <div className="file__title">noteTitle.md</div>
                 </span>
             </div>
             <span className="actions">

@@ -1,28 +1,8 @@
 import React from "react";
+import { nanoid } from "nanoid";
 import "../assets/styles/Modal.css";
 
 function Modal(props) {
-    function updateNotes(e) {
-        e.preventDefault();
-        props.closeModal();
-
-        const input = document.querySelector("input");
-        if (input.value) {
-            props.setNotes((prevNotes) => {
-                return [
-                    ...prevNotes,
-                    {
-                        id: prevNotes.length - 1,
-                        title: input.value,
-                        content: "",
-                        dateCreated: "today",
-                    },
-                ];
-            });
-            input.value = "";
-        }
-    }
-
     return (
         <div id="add-new-modal" className="hide">
             <div className="overlay"></div>
@@ -32,9 +12,7 @@ function Modal(props) {
                     <label htmlFor="doc-title">Document name:</label>
                     <input type="text" />
                     <div className="actions">
-                        <button type="submit" onClick={updateNotes}>
-                            Create
-                        </button>
+                        <button type="submit">Create</button>
                         <button type="reset" onClick={props.closeModal}>
                             Cancel
                         </button>
