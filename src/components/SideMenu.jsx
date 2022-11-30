@@ -1,8 +1,5 @@
 import React from "react";
 
-// components
-import Modal from "./Modal";
-
 // Styles
 import "../assets/styles/SideMenu.css";
 
@@ -10,30 +7,36 @@ import "../assets/styles/SideMenu.css";
 import { ReactComponent as AddFile } from "../assets/images/file-add-line.svg";
 import { ReactComponent as FileIcon } from "../assets/images/file-line.svg";
 
-function SideMenu() {
-    function toggleCreateNewModal() {
-        const addNewModal = document.querySelector("#add-new-modal");
-        addNewModal.classList.toggle("hide");
-    }
+function SideMenu(props) {
+    const { notes, openModal, currentNoteIndex, setCurrentNote } = props;
 
-    const notesElList = [
-        <div className="file">
-            <span className="file-icon">
-                <FileIcon />
-            </span>
-            <span>
-                <div className="file__date">dateCreated</div>
-                <div className="file__title">noteTitle.md</div>
-            </span>
-        </div>,
-    ];
+    const notesElList = notes.map((note, index) => {
+        return (
+            <div
+                className={`file ${
+                    currentNoteIndex === index ? "current-note" : ""
+                }`}
+                key={index}
+                onClick={() => setCurrentNote(note)}
+            >
+                <span className="file-icon">
+                    <FileIcon />
+                </span>
+                <span>
+                    <div className="file__date">{note.dateCreated}</div>
+                    <div className="file__title">{note.title}</div>
+                </span>
+            </div>
+        );
+    });
+
     return (
         <>
             <div id="side-menu" className="hide">
                 <div className="menu__head">
                     <p>MY DOCUMENTS</p>
                 </div>
-                <button onClick={toggleCreateNewModal}>
+                <button onClick={openModal}>
                     <span className="add-icon">
                         <AddFile />
                     </span>{" "}
@@ -41,10 +44,6 @@ function SideMenu() {
                 </button>
                 <div className="files-list">{notesElList}</div>
             </div>
-            <Modal
-                title="Create New document"
-                closeModal={toggleCreateNewModal}
-            />
         </>
     );
 }

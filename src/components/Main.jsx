@@ -7,7 +7,13 @@ import "../assets/styles/Main.css";
 import "../assets/styles/Preview.css";
 
 function Main(props) {
+    const { currentNote } = props;
+
     const [content, setContent] = React.useState("");
+
+    React.useEffect(() => {
+        setContent(currentNote.content);
+    }, [currentNote]);
 
     // code belongs to markdown-it package.
     let md = window.markdownit();
