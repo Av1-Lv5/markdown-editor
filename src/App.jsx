@@ -1,3 +1,4 @@
+// dependencies
 import React from "react";
 import { nanoid } from "nanoid";
 
@@ -8,6 +9,7 @@ import SideMenu from "./components/SideMenu";
 import Modal from "./components/Modal";
 import PaneHeader from "./components/PaneHeader";
 
+// styles
 import "./App.css";
 
 function App() {
@@ -45,10 +47,9 @@ function App() {
     }
 
     function formatDate(dateObj) {
-        if (dateObj)
-            return `${dateObj.getDate()}/${
-                dateObj.getMonth() + 1
-            } ${dateObj.getFullYear()}`;
+        return `${dateObj.getDate()}/${
+            dateObj.getMonth() + 1
+        } ${dateObj.getFullYear()}`;
     }
 
     return (

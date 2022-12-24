@@ -1,6 +1,5 @@
+// dependencies
 import React from "react";
-
-// components
 
 // styles
 import "../assets/styles/Main.css";
@@ -9,7 +8,7 @@ import "../assets/styles/Preview.css";
 function Main(props) {
     const { currentNote } = props;
 
-    const [content, setContent] = React.useState("");
+    const [content, setContent] = React.useState(currentNote.content);
 
     React.useEffect(() => {
         setContent(currentNote.content);
@@ -27,6 +26,7 @@ function Main(props) {
         setTextareaHeight();
     }, []);
 
+    // calculates remaining height of the `vh` after getting the height of header and pane header.
     function setTextareaHeight() {
         const headerHeight = document.querySelector("header").offsetHeight;
         const paneHeadHeight =

@@ -1,11 +1,13 @@
+// dependencies
 import React from "react";
+
+// components
 import SideMenuToggler from "./SideMenuToggler";
 
 // Styles
 import "../assets/styles/Header.css";
 
 // SVG files
-
 import { ReactComponent as BinIcon } from "../assets/images/delete-bin-line.svg";
 import { ReactComponent as SaveIcon } from "../assets/images/save-2-line.svg";
 import { ReactComponent as FileIcon } from "../assets/images/file-line.svg";

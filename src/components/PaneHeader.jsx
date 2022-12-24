@@ -1,3 +1,4 @@
+// SVG components
 import { ReactComponent as EyeIcon } from "../assets/images/eye-line.svg";
 // import { ReactComponent as EyeOffIcon } from "../assets/images/eye-off-line.svg";
 

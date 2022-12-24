@@ -1,6 +1,8 @@
+// dependencies
 import React from "react";
 import { nanoid } from "nanoid";
 
+// styles
 import "../assets/styles/Modal.css";
 
 function Modal(props) {

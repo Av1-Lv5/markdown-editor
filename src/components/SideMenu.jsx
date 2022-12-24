@@ -1,9 +1,10 @@
+// dependencies
 import React from "react";
 
 // Styles
 import "../assets/styles/SideMenu.css";
 
-// SVGs
+// SVG components
 import { ReactComponent as AddFile } from "../assets/images/file-add-line.svg";
 import { ReactComponent as FileIcon } from "../assets/images/file-line.svg";
 
@@ -31,20 +32,18 @@ function SideMenu(props) {
     });
 
     return (
-        <>
-            <div id="side-menu" className="hide">
-                <div className="menu__head">
-                    <p>MY DOCUMENTS</p>
-                </div>
-                <button onClick={openModal}>
-                    <span className="add-icon">
-                        <AddFile />
-                    </span>{" "}
-                    New Document
-                </button>
-                <div className="files-list">{notesElList}</div>
+        <div id="side-menu" className="hide">
+            <div className="menu__head">
+                <p>MY DOCUMENTS</p>
             </div>
-        </>
+            <button onClick={openModal}>
+                <span className="add-icon">
+                    <AddFile />
+                </span>{" "}
+                New Document
+            </button>
+            <div className="files-list">{notesElList}</div>
+        </div>
     );
 }
 
