@@ -1,25 +1,25 @@
 .overlay {
-    bottom: 0;
     background-color: #000;
-    left: 0;
     opacity: 0.5;
     position: fixed;
-    right: 0;
     top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-#add-new-modal.hide {
+#modal-container.hide {
     visibility: hidden;
 }
 
 .modal {
     padding: 1.5rem;
-    position: fixed;
     margin: auto;
+    position: fixed;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     width: 360px;
     border-radius: 0.25rem;
     height: fit-content;
@@ -50,4 +50,8 @@
 .modal .actions {
     display: flex;
     gap: 15px;
+}
+
+.modal button[type="reset"] {
+    background-color: var(--medium-dark-grey);
 }

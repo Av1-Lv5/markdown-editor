@@ -34,6 +34,10 @@
     background-color: var(--dark-grey);
 }
 
+.md-preview img {
+    width: 100%;
+    border-radius: 5px;
+}
 .md-preview h1,
 .md-preview h2,
 .md-preview h3,

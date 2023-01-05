@@ -1,18 +1,28 @@
-// dependencies
+// Dependencies
 import React from "react";
 
-// components
+// Components
 import SideMenuToggler from "./SideMenuToggler";
 
 // Styles
-import "../assets/styles/Header.css";
+import "../styles/Header.css";
 
-// SVG files
-import { ReactComponent as BinIcon } from "../assets/images/delete-bin-line.svg";
-import { ReactComponent as SaveIcon } from "../assets/images/save-2-line.svg";
-import { ReactComponent as FileIcon } from "../assets/images/file-line.svg";
+// SVG components
+import { ReactComponent as BinIcon } from "../assets/icons/delete-bin-line.svg";
+import { ReactComponent as SaveIcon } from "../assets/icons/save-2-line.svg";
+import { ReactComponent as FileIcon } from "../assets/icons/file-line.svg";
 
-function Header(props) {
+// Types
+import NoteObj from "../types/NoteObj";
+export interface Props {
+    currentNote: NoteObj;
+    setCurrentNote: React.Dispatch<React.SetStateAction<NoteObj>>;
+    notes: NoteObj[];
+    setNotes: React.Dispatch<React.SetStateAction<NoteObj[]>>;
+    currentNoteIndex: number;
+}
+
+function Header(props: Props) {
     const { currentNote, notes, setNotes, currentNoteIndex, setCurrentNote } =
         props;
 
@@ -20,8 +30,9 @@ function Header(props) {
         setNotes((prevNotes) => {
             const newNotes = prevNotes;
 
-            newNotes[currentNoteIndex].content =
-                document.querySelector("main .md-input").value;
+            newNotes[currentNoteIndex].content = (
+                document.querySelector(".md-input") as HTMLInputElement
+            ).value;
             return newNotes;
         });
     }

@@ -1,11 +1,17 @@
-// dependencies
+// Dependencies
 import React from "react";
 
-// styles
-import "../assets/styles/Main.css";
-import "../assets/styles/Preview.css";
+// Styles
+import "../styles/Main.css";
+import "../styles/Preview.css";
 
-function Main(props) {
+// Types
+import NoteObj from "../types/NoteObj";
+export interface Props {
+    currentNote: NoteObj;
+}
+
+function Main(props: Props) {
     const { currentNote } = props;
 
     const [content, setContent] = React.useState(currentNote.content);
@@ -18,7 +24,9 @@ function Main(props) {
     let md = window.markdownit();
     let mdParsed = md.render(`${content}`);
 
-    function updatePreview(event) {
+    function updatePreview(
+        event: React.ChangeEvent<HTMLTextAreaElement>
+    ): void {
         setContent(event.target.value);
     }
 
@@ -28,12 +36,16 @@ function Main(props) {
 
     // calculates remaining height of the `vh` after getting the height of header and pane header.
     function setTextareaHeight() {
-        const headerHeight = document.querySelector("header").offsetHeight;
-        const paneHeadHeight =
-            document.querySelector(".pane-head").offsetHeight;
+        const headerHeight = (document.querySelector("header") as HTMLElement)
+            ?.offsetHeight;
+        const paneHeadHeight = (
+            document.querySelector(".pane-head") as HTMLElement
+        )?.offsetHeight;
 
-        const mdInput = document.querySelector(".md-input");
-        const mdPreview = document.querySelector(".md-preview");
+        const mdInput = document.querySelector(".md-input") as HTMLInputElement;
+        const mdPreview = document.querySelector(
+            ".md-preview"
+        ) as HTMLDivElement;
 
         const height = `calc(100vh - ${headerHeight + paneHeadHeight}px)`;
 
