@@ -1,5 +1,5 @@
 // dependencies
-import React from "react";
+import { useEffect, useState } from "react";
 
 // data
 import { initialNote } from "./data/initialNote";
@@ -9,7 +9,6 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import SideMenu from "./components/SideMenu";
 import Modal from "./components/Modal";
-import PaneHeader from "./components/PaneHeader";
 
 // styles
 import "./styles/App.css";
@@ -17,54 +16,44 @@ import "./styles/App.css";
 // types
 import NoteObj from "./types/NoteObj";
 
+// Context
+import NotesContext from "./context/notesContext";
+
 function App() {
-    const notesLS: NoteObj[] = JSON.parse(
-        localStorage.getItem("notes") || JSON.stringify([initialNote])
-    );
+	const notesLS: NoteObj[] = JSON.parse(
+		localStorage.getItem("notes") || JSON.stringify([initialNote])
+	);
 
-    const [notes, setNotes] = React.useState(notesLS);
+	const [notes, setNotes] = useState(notesLS);
+	const [currentNote, setCurrentNote] = useState(notes[0]);
+	const [currentNoteIndex, setCurrentNoteIndex] = useState(0);
 
-    const [currentNote, setCurrentNote] = React.useState(notes[0]);
+	useEffect(() => {
+		localStorage.setItem("notes", JSON.stringify(notes));
+	}, [notes]);
 
-    const [currentNoteIndex, setCurrentNoteIndex] = React.useState(0);
+	useEffect(() => {
+		setCurrentNoteIndex(notes.indexOf(currentNote));
+	}, [currentNote]);
 
-    // update LS whenever there is a change in 'notes' state
-    React.useEffect(() => {
-        localStorage.setItem("notes", JSON.stringify(notes));
-    }, [notes]);
-
-    React.useEffect(() => {
-        setCurrentNoteIndex(notes.indexOf(currentNote));
-    }, [currentNote]);
-
-    return (
-        <>
-            <SideMenu
-                notes={notes}
-                currentNoteIndex={currentNoteIndex}
-                setCurrentNote={setCurrentNote}
-            />
-            <div id="body">
-                <Header
-                    currentNote={currentNote}
-                    setCurrentNote={setCurrentNote}
-                    currentNoteIndex={currentNoteIndex}
-                    notes={notes}
-                    setNotes={setNotes}
-                />
-                <div className="pane-headers-container">
-                    <PaneHeader title="MARKDOWN" />
-                    <PaneHeader title="PREVIEW" />
-                </div>
-                <Main currentNote={currentNote} />
-            </div>
-            <Modal
-                title="Create New document"
-                setNotes={setNotes}
-                setCurrentNote={setCurrentNote}
-            />
-        </>
-    );
+	return (
+		<NotesContext.Provider
+			value={{
+				notes,
+				setNotes,
+				currentNote,
+				setCurrentNote,
+				currentNoteIndex,
+			}}
+		>
+			<SideMenu />
+			<div id="body">
+				<Header />
+				<Main />
+			</div>
+			<Modal />
+		</NotesContext.Provider>
+	);
 }
 
 export default App;

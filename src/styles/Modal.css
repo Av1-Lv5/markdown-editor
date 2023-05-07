@@ -1,57 +1,57 @@
 .overlay {
-    background-color: #000;
-    opacity: 0.5;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+	background-color: #000;
+	opacity: 0.5;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 #modal-container.hide {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 .modal {
-    padding: 1.5rem;
-    margin: auto;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 360px;
-    border-radius: 0.25rem;
-    height: fit-content;
-    background-color: var(--light-black);
+	padding: 1.5rem;
+	margin: auto;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 360px;
+	border-radius: 0.25rem;
+	height: fit-content;
+	background-color: var(--light-black);
 }
 
 .modal label {
-    color: var(--grey);
-    font-size: 0.9rem;
+	color: var(--grey);
+	font-size: 0.9rem;
 }
 
 .modal input {
-    margin: 5px 0 1.2rem;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: var(--medium-dark-grey);
-    border: none;
-    outline: none;
-    color: var(--very-light-grey);
-    width: 100%;
+	margin: 5px 0 1.2rem;
+	padding: 15px;
+	border-radius: 5px;
+	background-color: var(--medium-dark-grey);
+	border: none;
+	outline: none;
+	color: var(--very-light-grey);
+	width: 100%;
 }
 
 .modal__title {
-    margin-bottom: 1.2rem;
-    font-size: 1.3rem;
+	margin-bottom: 1.2rem;
+	font-size: 1.3rem;
 }
 
 .modal .actions {
-    display: flex;
-    gap: 15px;
+	display: flex;
+	gap: 15px;
 }
 
 .modal button[type="reset"] {
-    background-color: var(--medium-dark-grey);
+	background-color: var(--medium-dark-grey);
 }

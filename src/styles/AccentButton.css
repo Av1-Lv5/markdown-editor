@@ -1,0 +1,15 @@
+.accent-btn {
+	background-color: var(--red-orange);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+}
+
+.accent-btn:hover {
+	background-color: var(--orange);
+}
+
+.accent-btn .accent-icon svg > path + path {
+	fill: var(--light-grey);
+}

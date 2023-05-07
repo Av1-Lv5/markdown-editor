@@ -1,0 +1,6 @@
+.menu-icon,
+.close-icon {
+	background-color: var(--medium-dark-grey);
+	padding: 20px;
+	cursor: pointer;
+}

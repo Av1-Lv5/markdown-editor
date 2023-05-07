@@ -1,49 +1,50 @@
-.pane-title {
-    letter-spacing: 0.1em;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-}
-
 .md-input,
 .md-preview {
-    padding: 15px 25px;
-    overflow-y: scroll;
+	padding: 15px 25px;
+	overflow-y: scroll;
 }
 
-.md-preview,
-.pane-headers-container .pane-head:nth-of-type(2) {
-    border-left: 1px solid var(--light-grey);
+.md-preview-container {
+	border-left: 1px solid var(--light-grey);
 }
-.md-input,
-.md-preview {
-    width: 50vw;
+
+.md-input-container,
+.md-preview-container {
+	min-width: 50%;
+	width: 100%;
+}
+
+.md-input-container .eye-icon {
+	display: none;
 }
 
 main {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-}
-
-.pane-headers-container {
-    display: flex;
-}
-
-.pane-head {
-    background-color: var(--light-black);
-    padding: 15px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	width: 100%;
 }
 
 .md-input {
-    width: 100%;
-    resize: none;
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    outline: none;
-    font-size: 1rem;
+	resize: none;
+	background-color: transparent;
+	color: inherit;
+	font-size: 1rem;
+	width: 100%;
+	border: none;
+	height: 100%;
+	outline: none;
+}
+
+/* below 650px */
+@media screen and (max-width: 650px) {
+	.md-input-container,
+	.md-preview-container {
+		min-width: 100%;
+		width: 100%;
+	}
+	.md-preview-container {
+		border-left: none;
+	}
+	.md-input-container .eye-icon {
+		display: block;
+	}
 }

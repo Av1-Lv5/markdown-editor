@@ -1,0 +1,22 @@
+.file {
+	padding: 8px;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+header .file {
+	flex-shrink: 0;
+}
+
+.file__date {
+	color: var(--medium-light-grey);
+}
+.file__date {
+	padding-bottom: 0.25em;
+	font-size: 0.8em;
+}
+.file:hover {
+	color: var(--red-orange);
+}

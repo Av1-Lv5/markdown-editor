@@ -1,42 +1,26 @@
-button {
-    background-color: var(--red-orange);
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    color: var(--light-grey);
-}
-
-button:hover {
-    background-color: var(--orange);
-}
-
-.bin-icon,
-.menu-icon,
-.close-icon,
-button,
 .file {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 svg {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
-.save-icon svg > path + path,
-.add-icon svg > path + path {
-    fill: var(--light-grey);
-}
-
-.save-icon,
-.file-icon,
-.add-icon {
-    padding-right: 8px;
+svg > path + path {
+	fill: var(--grey);
 }
 
 .menu-container + div {
-    width: 100%;
+	width: 100%;
 }
 
 #body {
-    width: 100vw;
+	width: 100%;
+}
+button {
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	color: var(--light-grey);
+	cursor: pointer;
 }

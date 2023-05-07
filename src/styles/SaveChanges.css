@@ -1,0 +1,6 @@
+/* below 700px */
+@media screen and (max-width: 700px) {
+	#saveChanges .accent-btn p {
+		display: none;
+	}
+}
