@@ -36,7 +36,6 @@
 }
 
 .md-preview blockquote {
-	color: var(--white);
 	font-weight: 500;
 	border-radius: 5px;
 	border-left: 3px solid var(--red-orange);
@@ -44,17 +43,17 @@
 	background-color: var(--dark-grey);
 }
 
+.md-preview.light-theme blockquote,
+.md-preview.light-theme code,
+.md-preview.light-theme pre {
+	background-color: var(--light-grey);
+}
+
 .md-preview img {
 	width: 100%;
 	border-radius: 5px;
 }
-.md-preview h1,
-.md-preview h2,
-.md-preview h3,
-.md-preview h4,
-.md-preview h5 {
-	color: var(--white);
-}
+
 
 .code-lang {
 	background-color: var(--light-black);

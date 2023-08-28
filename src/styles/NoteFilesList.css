@@ -1,6 +1,7 @@
 .files-list {
 	overflow-y: scroll;
-	padding: 0 25px;
+	height: fit-content;
+	flex-grow: 1;
 }
 .files-list .file {
 	margin-bottom: 10px;

@@ -1,4 +1,4 @@
-import { SetStateAction, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 // Components
 import PaneHeader from "./PaneHeader";
@@ -12,10 +12,12 @@ import setTextareaHeight from "../utils/calculateRemainingHeight";
 // Styles
 import "../styles/Main.css";
 import "../styles/Preview.css";
+import ThemeContext from "../context/themeContext";
 
 function Main() {
 	// Contexts
 	const { currentNote } = useContext(NotesContext);
+	const { theme } = useContext(ThemeContext);
 
 	// States
 	const [content, setContent] = useState(currentNote.content);
@@ -42,7 +44,7 @@ function Main() {
 	}, []);
 
 	return (
-		<main>
+		<main className={`${theme}-theme`}>
 			{isEyeIcon && (
 				<div className="md-input-container">
 					<PaneHeader
@@ -51,7 +53,7 @@ function Main() {
 						setIsEyeIcon={setIsEyeIcon}
 					/>
 					<textarea
-						className="md-input"
+						className={`md-input ${theme}-theme`}
 						name="md-input"
 						autoFocus
 						onChange={updatePreview}
@@ -65,7 +67,7 @@ function Main() {
 					isEyeIcon={isEyeIcon}
 					setIsEyeIcon={setIsEyeIcon}
 				/>
-				<div className="md-preview">
+				<div className={`md-preview ${theme}-theme`}>
 					<div
 						id="preview-content"
 						dangerouslySetInnerHTML={{ __html: mdParsed }}

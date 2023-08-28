@@ -10,6 +10,7 @@ import { ReactComponent as AddFile } from "../assets/icons/file-add-line.svg";
 // Components
 import AccentBtn from "./AccentButton";
 import NoteFilesList from "./NoteFilesList";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 function SideMenu() {
 	return (
@@ -21,6 +22,7 @@ function SideMenu() {
 				<AccentBtn text="New Document" icon={<AddFile />} />
 			</div>
 			<NoteFilesList />
+			<ThemeSwitcher />
 		</div>
 	);
 }

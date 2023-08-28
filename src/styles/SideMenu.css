@@ -1,17 +1,21 @@
 #side-menu {
 	background-color: var(--light-black);
 	height: 100%;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	transform: translateX(0);
 	width: 280px;
-	transition: transform 350ms ease, width 350ms ease;
+	transition: transform 350ms ease, width 250ms ease;
 	flex-shrink: 0;
+}
+#side-menu > div {
+	padding: 0 25px;
 }
 
 #side-menu.hide {
 	width: 0;
-	transform: translateX(-350px);
+	transform: translateX(-280px);
 	visibility: hidden;
 }
 
@@ -23,7 +27,7 @@
 }
 
 #side-menu #create-new {
-	margin: 25px;
+	margin: 25px 0;
 }
 
 #create-new .accent-btn {

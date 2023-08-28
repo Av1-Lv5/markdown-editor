@@ -2,6 +2,18 @@
 	letter-spacing: 0.1em;
 	font-family: var(--font-mono);
 	font-size: 0.8rem;
+	font-weight: 800;
+}
+
+main.light-theme .pane-head {
+	background-color: var(--light-grey);
+}
+
+main.light-theme .eye-icon path:last-of-type {
+	fill: var(--medium-dark-grey);
+}
+main.light-theme .pane-title {
+	color: var(--medium-dark-grey);
 }
 
 .pane-head {
@@ -16,6 +28,6 @@
 .eye-icon {
 	cursor: pointer;
 }
-.eye-icon:hover path:last-of-type {
+main .eye-icon:hover path:last-of-type {
 	fill: var(--red-orange);
 }

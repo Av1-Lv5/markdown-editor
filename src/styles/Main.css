@@ -34,6 +34,16 @@ main {
 	outline: none;
 }
 
+.md-preview {
+	color: var(--white);
+}
+
+.md-preview.light-theme,
+.md-input.light-theme {
+	color: var(--black);
+	background-color: var(--very-light-grey);
+}
+
 /* below 650px */
 @media screen and (max-width: 650px) {
 	.md-input-container,
